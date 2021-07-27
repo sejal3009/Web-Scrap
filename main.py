@@ -1,5 +1,9 @@
+# basic program for web scraping of any webpage
+# only for study purpose link of justdial is taken.
+
 import requests
 from bs4 import BeautifulSoup
+# filename = " name of file in which data is extracted.csv"
 filename="banquate_hall_mumbai.csv"
 f=open(filename,"w")
 headers="name, address, number\n"
@@ -7,6 +11,7 @@ f.write(headers)
 i=0
 while i<50:
 	i=i+1
+	#url = url of page from ehich data need to srap
 	url= 'https://www.justdial.com/Mumbai/Banquet-Halls/nct-10035861/page-'+str(i)
 	agent={"User-Agent":'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
 	page=requests.get(url, headers=agent)
